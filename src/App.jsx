@@ -21,6 +21,7 @@ function App() {
       const dato = await respuesta.json();
       console.log(respuesta);
       console.log(dato[0]);
+      setPersonaje(dato[0]);
     } catch (error) {
       console.log(error)
     }
@@ -30,8 +31,8 @@ function App() {
     <>
       <Container className="text-center my-5">
         <img src={logo} alt="Logo de los simpson" className="w-50" />
-        <Frase />
-        <Button variant="warning">Obtener frase</Button>
+        <Frase personaje={personaje} />
+        <Button variant="warning" >Obtener frase</Button>
       </Container>
     </>
   );
